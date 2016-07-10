@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Path2D</title>
+</head>
+<body onload="draw('canvas');">
+	<h1>canvas元素示例</h1>
+	<canvas id="canvas" width="400" height="300">
+
+	</canvas>
+	<script type="text/javascript">
+		function draw(id) {
+			var canvas=document.getElementById(id);
+			if(canvas==null) return false;
+			var context=canvas.getContext('2d');
+			context.fillStyle='red';
+			var path1=new Path2D();
+			path1.rect(10,10,100,100);
+			var path2=new Path2D(path1);
+			// var path2=new Path2D();
+			path2.moveTo(220,60);
+			path2.arc(170,60,50,0,2*Math.PI);
+			// path2.addPath(path1);
+			context.stroke(path2);
+			context.fill(path1);
+		}
+
+	</script>
+</body>
+</html>

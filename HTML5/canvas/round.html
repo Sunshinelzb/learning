@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>round</title>
+</head>
+
+<body onload="draw('canvas');">
+    <h1>canvas元素示例</h1>
+    <canvas id="canvas" width="400" height="300"></canvas>
+    <script type="text/javascript">
+    function draw(id) {
+        var canvas = document.getElementById(id);
+        if (canvas == null)
+            return false;
+        var context = canvas.getContext('2d');
+        context.fillStyle = '#e4f2a2';
+        context.fillRect(0, 0, 400, 300);
+        var n = 0;
+        for (var i = 0; i < 10; i++) {
+            context.beginPath();
+            context.arc(i * 25, i * 25, i * 10, 0, Math.PI * 2, true);//圆
+            // context.ellipse(i * 25, i * 25, i * 12, i * 20, 30, 0, Math.PI * 2, true);//椭圆,兼容性差
+            context.closePath();
+            context.fillStyle = 'rgba(255,0,0,.25)';
+            context.fill();
+        }
+    }
+    </script>
+</body>
+
+</html>

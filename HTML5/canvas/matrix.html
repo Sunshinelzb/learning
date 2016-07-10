@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>matrix</title>
+</head>
+
+<body onload="draw('canvas');">
+    <h1>canvas元素示例</h1>
+    <canvas id="canvas" width="400" height="300"></canvas>
+    <script type="text/javascript">
+    function draw(id) {
+        var canvas = document.getElementById(id);
+        if (canvas == null) {
+            return false;
+        }
+        var context = canvas.getContext('2d');
+        context.fillStyle = "#e3f3d2";
+        context.fillRect(0, 0, 400, 300);
+        context.fillStyle = "red";
+        context.strokeStyle = "blue";
+        context.lineWidth = 5;
+        context.fillRect(50, 50, 100, 100);//设置图形填充的样式
+        context.strokeRect(50, 50, 100, 100);//设置图形边框的样式
+        context.clearRect(50,50,100,100);//清除样式，变为透明矩
+        // window.location=canvas.toDataURL("image/jpeg");
+    }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>bevel</title>
+</head>
+
+<body onload="draw('canvas');">
+    <h1>canvas元素示例</h1>
+    <canvas id="canvas" width="400" height="300"></canvas>
+    <script type="text/javascript">
+    function draw(id) {
+        var canvas = document.getElementById(id);
+        if (canvas == null) return false;
+        var context = canvas.getContext('2d');
+        context.fillStyle = "#EEEEFF";
+        context.beginPath();
+        context.lineWidth = 10;
+        context.lineJoin = "round";
+        context.moveTo(20, 20);
+        context.lineTo(20, 200);
+        context.lineTo(200, 200);
+        context.lineTo(200,20);
+        context.lineTo(15,20);
+        context.stroke();
+        context.closePath();
+    }
+    </script>
+</body>
+
+</html>

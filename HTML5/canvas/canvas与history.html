@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>canvas与history结合</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <style>
+    #canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+        display: block;
+    }
+    </style>
+</head>
+
+<body onload="draw('canvas');">
+    <h1>canvas API 结合 History API</h1>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <img src="black.png" id="image" style="display: none;" alt="">
+    <script>
+    function $(id) {
+        return document.getElementById(id);
+    }
+    var image = $('image');
+    var canvas = $('canvas');
+    var context = canvas.getContext('2d');
+    var isDrawing = false;
+    //存放像素
+    var state = context.getImageData(0, 0, canvas.width, canvas.height);
+    history.pushState(state, null);
+    canvas.addEventListener("pointerdown", function(e) {
+        e.preventMainpulation()
+    }, false);
+    canvas.addEventListener("mousedown", startDrawing, false);
+    canvas.addEventListener("mousemove", draw, false);
+    canvas.addEventListener("mouseup", stopDrawing, false);
+    canvas.addEventListener("popstate", loadState, false);
+
+    function startDrawing() {
+        isDrawing = true;
+    }
+
+    function draw(event) {
+        if (isDrawing) {
+            var sx = canvas.width / canvas.offsetWidth;
+            var sy = canvas.height / canvas.offsetHeight;
+            var x = sx * event.clientX - image.naturalWidth / 2;
+            var y = sy * event.clientY - image.naturalHeight / 2;
+            context.drawImage(image, x, y);
+        }
+    }
+
+    function stopDrawing() {
+        isDrawing = false;
+        var state = context.getImageData(0, 0, canvas.width, canvas.height);
+        history.pushState(state, null);
+    }
+
+    function loadState(e) {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        if (e.state) {
+            context.putImageData(e.state, 0, 0);
+        }
+    }
+    </script>
+</body>
+
+</html>
