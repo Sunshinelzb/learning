@@ -1,0 +1,80 @@
+@charset 'UTF-8';
+
+/**
+ *
+ * @authors Sunshine  625592890@qq.com
+ * @date    2016-08-04 15:12:02
+ * @hello 	hello world
+ * @version $Id$
+ */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.wrapper {
+	position: absolute;    /* top,right,bottom,left */
+	clip: rect(0px, 100px, 100px, 50px);
+	width: 100px;
+	height: 100px;
+}
+
+.circle {
+	position: absolute;
+	clip: rect(0px, 50px, 100px, 0px);
+	width: 80px;
+	height: 80px;
+	border: 10px solid #f20;
+	border-radius: 50px;
+}
+
+div[data-anim~=base] {
+	animation-timing-function: linear;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+.wrapper[data-anim~=wrapper] {
+	animation-name: close-wrapper;
+	animation-duration: .01s;
+	animation-delay: 3s;
+}
+
+.circle[data-anim~=left] {
+	animation-name: left-spin;
+	animation-duration: 6s;
+}
+
+.circle[data-anim~=right] {
+	animation-name: right-spin;
+	animation-duration: 3s;
+}
+
+@-webkit-keyframes right-spin {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+
+	to {
+		-webkit-transform: rotate(180deg);
+	}
+
+}
+
+@-webkit-keyframes left-spin {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+
+}
+
+@-webkit-keyframes close-wrapper {
+	to {
+		clip: rect(auto, auto, auto, auto);
+	}
+
+}

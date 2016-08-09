@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>用户交互</title>
+    <style>
+    #canvas {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -250px;
+        margin-top: -250px;
+    }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="500" height="500" style="background-color: #ccc;"></canvas>
+    <script src="utils.js"></script>
+    <script>
+    (function() {
+        // var canvas = document.getElementById('canvas'),
+        //     mouse = utils.captureMouse(canvas);
+
+        // canvas.addEventListener('mousedown', function(event) {
+        //     console.log("x:" + mouse.x + ",y:" + mouse.y);
+        // }, false);
+        canvas.addEventListener('mousedown', function(event) {
+            //event兼容处理
+            var event = event || window.event;
+            //兼容处理，获取当前鼠标相对屏幕的坐标
+            var winX = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft || event.pageX;
+            var winY = event.clientY + document.body.scrollTop + document.documentElement.scrollTop || event.pageY;
+
+            //定义一个对象
+            var can = {
+                x: 0,
+                y: 0
+            };
+            //调用getBoundingClientRect方法，该方法返回一个对象，包含canvas的left、 top、 width、 height等值
+
+            var canBox = canvas.getBoundingClientRect();
+
+            //（winX - canBox.left）：与上面的含义一样，是减去canvas的偏移量
+            //（canvas.width/canBox.width）：一般来说canvas.width和canBox.width是一样的，也就是说这两个的比值为1.但不排除你会为canvas设置边框，这时实际的坐标位置就会有所变化，比如canvas.width = 500, 你可能设置了一个1px的边框，那么canBox.width = 502, 所以比值就不为1了。这样做只是让数据更精确。
+
+            can.x = (winX - canBox.left) * (canvas.width / canBox.width);
+            can.y = (winY - canBox.top) * (canvas.height / canBox.height);
+
+            //输出
+            console.log(can.x, can.y);
+        }, false);
+        function onKeyboard(event) {
+                switch (event.keyCode) {
+                    case 38:
+                        console.log('up!');
+                        break;
+                    case 40:
+                        console.log('down!');
+                        break;
+                    case 37:
+                        console.log('left!');
+                        break;
+                    case 39:
+                        console.log('right!');
+                        break;
+                    default:
+                        console.log(event.keyCode);
+                }
+            }
+            //为window对象绑定键盘事件
+        window.addEventListener('keydown', onKeyboard, false);
+    }())
+    </script>
+</body>
+
+</html>

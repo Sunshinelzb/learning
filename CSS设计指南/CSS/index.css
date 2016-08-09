@@ -1,0 +1,866 @@
+@charset 'UTF-8';
+
+/**
+ *
+ * @authors Sunshine  625592890@qq.com
+ * @date    2016-08-08 21:55:44
+ * @hello 	hello world
+ * @version $Id$
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    font-family: helvetica, arial, sans-serif;
+    background-color: #efefef;
+}
+
+#wrapper {
+    width: 980px;
+    margin: 0 auto 20px;
+}
+
+
+/* 弧形角可以通过边框和背景色显示出来。 */
+
+header {
+    position: relative;
+    /*为页面标题和搜索表单提供定位上下文*/
+    height: 70px;
+    /*固定高度，包围绝对定位元素*/
+    margin: 10px 0;
+    /*负扩展值把阴影定位到盒子内部*/
+    padding: 1px;
+    border-radius: 20px 0 20px 0;
+    background: #fff;
+    /*顺序：左上、右上、右下、左下*/
+    box-shadow: 0 12px 8px -9px #555;
+    /*防止子元素外边距叠加*/
+}
+
+header section#title {
+    position: absolute;
+    /*左上角定位*/
+    top: 0;
+    /*高到足以容纳两行文本*/
+    left: 0;
+    width: 300px;
+    /*宽到足以不让文本折行*/
+    height: 65px;
+}
+
+header h1 {
+    font-family: 'Lato', helvetica, sans-serif;
+    font-size: 2.2em;
+    font-weight: bolder;
+    line-height: 1;
+    padding: 9px 12px 0;
+    letter-spacing: -.025em;
+    color: #4eb8ea;
+}
+
+header h2 {
+    font-family: 'Source Sans Pro', helvetica, sans-serif;
+    font-size: .9em;
+    font-weight: 400;
+    line-height: 1;
+    padding: 10px 12px 0;
+    letter-spacing: -.025em;
+    color: #333;
+}
+
+
+/* 表单搜索 */
+
+form.search {
+    position: absolute;
+    top: 23px;
+    right: 20px;
+    /*相对于页眉右上角定位*/
+    width: 150px;
+    /*宽到足以容纳扩展后的搜索框*/
+}
+
+.search input {
+    font-family: 'Source Sans Pro', helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    float: right;
+    width: 70px;
+    padding: 2px 0 3px 5px;
+    -webkit-transition: .5s width ease-in;
+    /*搜索框过渡动画，别忘了带其他厂商前缀的属性*/
+    color: #888;
+    border-radius: 10px 0 10px 0;
+    outline: none;
+    /*去掉默认的轮廓线*/
+}
+
+.search input:focus {
+    width: 140px;
+    box-shadow: 1px 1px 1px #48a7dc;
+}
+
+
+/*在获得焦点时扩展到这么宽*/
+
+.search label {
+    display: none;
+}
+
+form.search input {
+    background-color: #fff;
+}
+
+form.search input::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+
+/* 导航部分 */
+
+
+/* 由于左右两端的页面标题和搜索表单都因绝对定位而脱离了文档 */
+
+
+/* 流，所以nav 元素是与布局同宽的 */
+
+nav.menu {
+    margin: 19px auto;
+    padding: 0;
+    text-align: center;
+    font-size: .8em;
+}
+
+
+/* 居中没有宽度的元素 */
+
+
+/* 为要居中元素的父元素（这里的nav）应用text-align:center，为要
+居中的元素（这里的ul）设定display:inline-block，让它包含列表项。 */
+
+nav.menu > ul {
+    display: inline-block;
+}
+
+nav.menu li {
+    float: left;
+    position: relative;
+}
+
+nav.menu li a {
+    display: block;
+    padding: .25em .8em;
+    font: normal 600 1.2em "Source Sans Pro", helvetica, sans-serif;
+    text-align: left;
+    color: #fff;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+nav.menu li.choice1 a {
+    background: #f58c21;
+}
+
+nav.menu li.choice2 a {
+    background: #4eb8ea;
+}
+
+nav.menu li.choice3 a {
+    background: #d6e636;
+}
+
+nav.menu li.choice4 a {
+    background: #ee4c98;
+}
+
+nav.menu li.choice5 a {
+    background: #f58c21;
+}
+
+nav.menu li:hover > a {
+    color: #555;
+    border-color: #fff;
+    border: 0;
+}
+
+nav.menu li:last-child a {
+    border-bottom-right-radius: 10px;
+}
+
+nav.menu li:first-child a {
+    border-top-left-radius: 10px;
+}
+
+nav.menu li ul {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    width: 12em;
+    left: 0;
+    top: 100%;
+    transition: 1s all ease-in-out;
+}
+
+nav.menu li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+}
+
+nav.menu li li {
+    float: none;
+}
+
+nav.menu li li:first-child a {
+    border-radius: 0;
+}
+
+nav.menu li li:last-child a {
+    border-bottom-left-radius: 10px;
+}
+
+section#feature_area {
+    overflow: hidden;
+    margin: 16px 0 0;
+    padding: 0 0 10px;
+}
+
+section#feature_area article {
+    float: left;
+    width: 66%;
+}
+
+section#feature_area aside {
+    float: right;
+    width: 34%;
+}
+
+section#feature_area article .inner {
+    padding: 12px;
+    background-color: #fff;
+    border-radius: 20px 0;
+    box-shadow: 0 12px 8px -9px #555;
+}
+
+section#feature_area article a {
+    text-decoration: none;
+}
+
+
+/*博文标题链接*/
+
+section#feature_area article img {
+    /*照片*/
+    float: left;
+    padding: 0 10px 10px 0;
+    border-radius: 10%;
+}
+
+section#feature_area article h4 {
+    font: normal 400 1em "Source Sans Pro", helvetica, sans-serif;
+    color: #f58c21;
+    letter-spacing: -.025em;
+}
+
+section#feature_area article h3 {
+    /*博文标题*/
+    font: normal 700 1.75em Lato, helvetica, sans-serif;
+    color: #555;
+    margin: 0px 0 12px 0px;
+    letter-spacing: -.05em;
+}
+
+section#feature_area article#blog_leadoff p {
+    /*博文内容*/
+    font: normal 400 1.1em/1.5em "Source Sans Pro", helvetica, sans-serif;
+    color: #616161;
+    margin: 0 0px;
+    text-align: justify;
+}
+
+section#feature_area article#blog_leadoff p::first-letter {
+    /*首字母下沉*/
+    font: normal 700 4.5em/0.6 'Lato', helvetica, sans-serif;
+    font-style: normal;
+    float: left;
+    margin: .05em .05em 0 0;
+    text-shadow: 1px 3px 3px #ccc;
+    margin: 2px;
+    /*IE10 及以上版本支持文本阴影*/
+}
+
+section#feature_area article#blog_leadoff p::first-line::not(::first-letter) {
+    /*首行小型大写字母*/
+    font-variant: small-caps;
+    font-size: 1.2em;
+}
+
+form.signin {
+    width: 19em;
+    /*表单的整体宽度*/
+    float: right;
+    background: #fff;
+    border-radius: 10px 0 10px 0;
+    box-shadow: 0 12px 8px -9px #555;
+}
+
+.signin fieldset {
+    border: 0;
+    margin: 10px 14px;
+}
+
+
+/*去掉默认的边框*/
+
+.signin legend span {
+    font: 700 1.3em/1.1em Lato, helvetica, sans-serif;
+    color: #4eb8ea;
+    letter-spacing: -.05em;
+}
+
+.signin section {
+    overflow: hidden;
+    /*包围控件和标注*/
+    padding: .25em 0;
+    /*表单元素的间距*/
+}
+
+.signin section label {
+    font: 400 "Source Sans Pro", helvetica, sans-serif;
+    float: left;
+    width: 5em;
+    /*标注栏的宽度*/
+    margin: .5em .3em 0 0;
+    /*外边距保持文本与控件的间距*/
+    line-height: 1.1;
+    color: #555;
+}
+
+.signin section input {
+    float: right;
+    width: 10.5em;
+    /*控件栏的宽度*/
+    margin: .2em 0 0 .5em;
+    padding: 3px 10px 2px;
+    /*输入文本与控件的间距*/
+    color: #555;
+    font-size: .8em;
+    outline: none;
+    border-radius: 10px 0 10px 0;
+}
+
+input:-webkit-autofill {
+    color: #fff !important;
+}
+
+
+/*去掉WebKit 默认的黄色背景*/
+
+.signin section input[type=submit] {
+    float: right;
+    /*将按钮与控件右边对齐*/
+    width: auto;
+    /*重设按钮宽度*/
+    margin: 0 2px 3px 0;
+    padding: 0px 8px 3px;
+    font-size: 1em;
+    font-weight: 800;
+    color: #fff;
+    border: none;
+    background-color: #d6e636;
+    box-shadow: 1px 1px 2px #888;
+}
+
+.signin section p {
+    /*内容为"not signed up?"*/
+    float: right;
+    clear: both;
+    margin: .2em 0 0;
+    text-align: right;
+    font-size: .8em;
+    line-height: 1;
+    color: #555;
+}
+
+.signin section p a {
+    color: #333;
+}
+
+
+/*到注册表单的链接*/
+
+.signin section p a:hover {
+    color: #777;
+    text-decoration: none;
+}
+
+.signin section p.direction.error {
+    /*错误消息*/
+    display: block;
+    color: #f00;
+    /*添加error 类后，把说明文字变成红色*/
+}
+
+.signin section p.direction {
+    display: none;
+}
+
+section#feature_area nav {
+    width: 19em;
+    /*容器整体宽度*/
+    float: right;
+    /*与区域右边对齐*/
+    margin: 15px 0 0;
+    /*上方间距*/
+    padding: .6em 0em .75em;
+    /*链接上下的间距*/
+    background: #fff;
+    border-radius: 10px 0 10px 0;
+    box-shadow: 0 12px 8px -9px #555;
+}
+
+#feature_area nav h3 {
+    padding: 0 14px 0;
+    /*标题左右的空间*/
+    font: 700 1.3em 'Lato', helvetica, sans-serif;
+    text-align: left;
+    color: #aaa;
+    letter-spacing: -.05em;
+}
+
+#feature_area nav ul {
+    margin: 0em 0 0 20px;
+}
+
+#feature_area nav li {
+    padding: .7em 0 0 2em;
+    position: relative;
+    /*项目符号的定位上下文*/
+    list-style-type: none;
+}
+
+#feature_area nav li:before {
+    /*定制项目符号*/
+    content: "";
+    /*用空字符串，因为不需要实际内容*/
+    position: absolute;
+    /*相对于列表项定位*/
+    height: 10px;
+    /*项目符号大小*/
+    width: 10px;
+    left: 12px;
+    /*定位项目符号*/
+    top: 12px;
+    border-radius: 5px 0 5px 0;
+    /*项目符号形状*/
+    background-color: #d6e636;
+    /*项目符号颜色*/
+    box-shadow: 1px 1px 2px #888;
+}
+
+#feature_area nav li a {
+    display: block;
+    /*链接与列表项同宽*/
+    text-decoration: none;
+    /*去掉默认的下划线*/
+    font-size: .9em;
+    color: #616161;
+}
+
+#feature_area nav li a:hover {
+    color: #000;
+}
+
+section#book_area {
+    /*与布局同宽*/
+    clear: both;
+    border-radius: 20px 0px 20px 0px;
+    border: 1px solid #f58c21;
+    margin: 8px 0 16px;
+    /*上下间距*/
+    overflow: hidden;
+}
+
+#book_area article {
+    /*四本书四栏*/
+    float: left;
+    width: 25%;
+    padding: 10px 0;
+    background: none;
+}
+
+#book_area article .inner {
+    /*封面外包装*/
+    position: relative;
+    /*为弹出层提供定位上下文*/
+    width: 140px;
+    /*包装每一本书*/
+    margin: 0 auto;
+    /*在各自article 元素内居中每一本书*/
+}
+
+#book_area .inner h3 {
+    /*旋转文字*/
+    position: absolute;
+    width: 160px;
+    left: 112%;
+    bottom: 5px;
+    /*把文字定位在图书右侧*/
+    transform: rotate(-90deg);
+    /*旋转文字需要使用带厂商前缀的属性*/
+    transform-origin: left bottom;
+    /*设定旋转中心点，需要带厂商前缀的属性*/
+    color: #ccc;
+    font: normal 900 1.4em Lato, helvetica, sans-serif;
+    text-align: left;
+}
+
+
+/*较窄的封面需要不同的偏移量*/
+
+#book_area article.right:last-child h3 {
+    left: 85%;
+}
+
+#book_area article img {
+    box-shadow: 0 12px 8px -9px #555;
+}
+
+#book_area article aside {
+    /*弹出层共享样式开始*/
+    display: none;
+    /*隐藏弹出层*/
+    position: absolute;
+    /*相对于包含图片的内部div*/
+    z-index: 2;
+    width: 200px;
+    /*弹出层宽度*/
+    background: #fff;
+    padding: 10px 2px 5px;
+    /*弹出层内容边距*/
+    border: 2px solid #f58c21;
+    border-radius: 10px 0px 10px 0px;
+    box-shadow: 4px 4px 16px #555;
+    color: #555;
+    font: .8em/1.5em "Source Sans Pro", helvetica, sans-serif;
+}
+
+#book_area article:hover aside {
+    display: block;
+}
+
+
+/*鼠标悬停于封面时显示弹出层*/
+
+#book_area article aside li {
+    padding: .25em 0 .75em 1em;
+    /*列表项的垂直间距和左边距*/
+    line-height: 1.2em;
+}
+
+#book_area article aside li a {
+    /*链接文本*/
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #616161;
+}
+
+#book_area article aside li a:hover {
+    /*悬停时突显链接*/
+    color: #333;
+}
+
+
+/*弹出层共享样式结束*/
+
+#book_area article.left aside {
+    /*左侧两本书*/
+    left: 84%;
+    top: 14px;
+    /* 把弹出层定位在图片右侧*/
+}
+
+#book_area article.right aside {
+    /*右侧两本书*/
+    right: 84%;
+    top: 14px;
+    /*把弹出层定位在图片左侧*/
+}
+
+#book_area article aside:after {
+    /*橙色三角形*/
+    content: "";
+    /*需要有内容，这里是一个空字符串*/
+    position: absolute;
+    /*相对于弹出层定位*/
+    top: 33px;
+    border: 12px solid;
+    height: 0px;
+    width: 0px;
+    /*收缩边框创造三角形*/
+}
+
+#book_area article.left aside:after {
+    /*左侧图书弹出层的三角形定位及颜色*/
+    right: 100%;
+    border-color: transparent #f58c21 transparent transparent;
+}
+
+#book_area article.right aside:after {
+    /*右侧图书弹出层的三角形定位及颜色*/
+    left: 100%;
+    border-color: transparent transparent transparent #f58c21;
+}
+
+#book_area article aside:before {
+    /*白色三角形*/
+    content: "";
+    /*需要有内容，这里是一个空字符串*/
+    position: absolute;
+    /*相对于弹出层定位*/
+    border: 8px solid;
+    height: 0px;
+    width: 0px;
+    /*收缩边框创造三角形*/
+    z-index: 100;
+    /*保证白色三角形在最前面*/
+    top: 37px;
+}
+
+#book_area article.left aside:before {
+    /*左侧图书白色三角形的样式、位置和颜色*/
+    right: 100%;
+    border-color: transparent white transparent transparent;
+}
+
+#book_area article.right aside:before {
+    /*右侧图书白色三角形的样式、位置和颜色*/
+    left: 100%;
+    border-color: transparent transparent transparent white;
+}
+
+footer {
+    padding: .5em 0 .35em 0;
+    /*内容上下的间距*/
+    text-align: center;
+    /*居中内容*/
+    border-radius: 10px 0px 10px 0px;
+    background: #fff;
+    box-shadow: 0 12px 8px -9px #555;
+}
+
+footer p {
+    /*文本行的样式*/
+    font-family: 'Source Sans Pro';
+    font-weight: 400;
+    font-size: .85em;
+    letter-spacing: -.05em;
+    color: #555;
+}
+
+footer p a {
+    /*文本行中的链接*/
+    font-family: 'Source Sans Pro';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1em;
+    color: #4eb8ea;
+    text-decoration: none;
+}
+
+footer p a:hover {
+    color: #777;
+}
+
+footer ul {
+    /*链接列表*/
+    display: inline-block;
+    /*收缩包围列表 */
+    margin: 4px 0 0;
+}
+
+footer li {
+    list-style-type: none;
+    /*去掉默认的项目符号*/
+    float: left;
+    /*让列表项水平排列*/
+    font-family: "Source Sans Pro";
+    font-weight: 400;
+    font-size: .85em;
+}
+
+footer li + li a {
+    border-left: 1px solid #ccc;
+    /*链接分隔线*/
+}
+
+footer li a {
+    text-decoration: none;
+    /*去掉链接默认的下划线*/
+    color: #aaa;
+    padding: 0 5px;
+    /*链接间距*/
+}
+
+footer a:hover {
+    color: #777;
+}
+
+@media only screen and (max-width:1000px) {
+    /*1000 像素的断点*/
+    body {
+        margin: 0 8px 20px;
+        /*添加右外边距，以防滚动条碍事儿*/
+    }
+    #wrapper {
+        width: 98%;
+    }
+    /*布局由固定变成流动*/
+    header {
+        height: 100px;
+        /*增加页眉高度，为重新定位菜单留出空间*/
+        padding: 1px 0 0 0;
+        /*防止导航菜单的上外边距叠加*/
+    }
+    header nav.menu {
+        margin-top: 68px;
+        /*把菜单移动到页面标题和搜索框下方 */
+    }
+    section#feature_area {
+        padding-bottom: 0;
+    }
+    /*用不着了*/
+    section#feature_area article {
+        /*让博文摘要部分与布局同宽*/
+        float: none;
+        /*不需要浮动了*/
+        width: auto;
+        /*自动填满布局*/
+    }
+    section#feature_area aside {
+        /*原来的右栏同样与布局同宽*/
+        float: none;
+        width: auto;
+    }
+    section#feature_area aside form {
+        float: left;
+        /*浮动到左侧*/
+        margin: 15px 0 0 0;
+        /*与nav 的上外边距一致*/
+    }
+    section#feature_area aside nav {
+        width: 17em;
+        /*缩小博文链接区的宽度*/
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/*1000 像素断点结束*/
+
+@media only screen and (max-width:640px) {
+    header {
+        height: 100px;
+    }
+    header nav.menu {
+        width: 94%;
+        font-size: .65em;
+    }
+    /*水平间距更多了*/
+    section#book_area article {
+        /*博文摘要*/
+        width: auto;
+        float: none;
+        margin: 0;
+        padding: 0;
+        /*每本书的容器都与布局同宽*/
+    }
+    section#feature_area aside form,
+    section#feature_area aside nav {
+        /*博文链接*/
+        margin: 10px auto;
+        /*添加上、下外边距*/
+        float: none;
+    }
+    section#feature_area aside nav {
+        width: 19em;
+    }
+    /*图片容器与布局同宽*/
+    section#book_area article .inner {
+        width: 98%;
+        margin: 0 0 0 5px;
+    }
+    #book_area .inner h3 {
+        /*取消文本旋转效果*/
+        -webkit-transform: none;
+        -moz-transform: none;
+        -moz-transform-origin: none;
+        -ms-transform-origin: none;
+        transform: none;
+        position: static;
+    }
+    #book_area article img {
+        /*相对设备宽度确定图片宽度 */
+        width: 40%;
+    }
+    section#book_area {
+        background: #fff;
+        padding: 0 10px 10px;
+        margin: 0 0 10px;
+    }
+    #book_area article aside {
+        /*在图片旁边显示弹出层*/
+        display: block;
+        position: static;
+        float: right;
+        margin: 0;
+        padding: 0 0 20px 0;
+        font-size: .8em;
+        border: none;
+        width: 55%;
+        box-shadow: none;
+    }
+    section#book_area article aside::before,
+    /*隐藏弹出层的三角*/
+    section#book_area article aside::after {
+        display: none;
+    }
+}
+
+@media only screen and (max-width:320px) {
+    /*iPhone 竖屏*/
+    header {
+        height: 90px;
+    }
+    /*缩小页眉高度*/
+    header section#title h1 {
+        font-size: 1.25em;
+    }
+    /*文本再小一点*/
+    header section#title h2 {
+        font-size: .75em;
+    }
+    /*文本再小一点*/
+    header form.search {
+        top: 6px;
+        right: 2px;
+    }
+    /*搜索框上移*/
+    /*按比例缩小，并上移菜单*/
+    header nav.menu {
+        font-size: .55em;
+        margin-top: 55px;
+    }
+    nav.menu ul li a {
+        padding: 5px 4px;
+        /*增大链接，方便点击*/
+        margin: 0;
+    }
+}

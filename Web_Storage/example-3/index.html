@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>简单检索</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+</head>
+
+<body>
+    <h1>使用Web Storage来做简易数据库示例</h1>
+    <table>
+        <tr>
+            <td>姓名:</td>
+            <td>
+                <input type="text" id="name" onfocus="this.value='';">
+            </td>
+        </tr>
+        <tr>
+            <td>EMAIL:</td>
+            <td>
+                <input type="text" id="email" onfocus="this.value='';">
+            </td>
+        </tr>
+        <tr>
+            <td>电话号码:</td>
+            <td>
+                <input type="text" id="tel" onfocus="this.value='';">
+            </td>
+        </tr>
+        <tr>
+            <td>备注:</td>
+            <td>
+                <input type="text" id="memo" onfocus="this.value='';">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="button" value="保存" onclick="saveStorage();">
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <p>检索:
+        <input type="text" id="find">
+        <input type="button" value="检索" onclick="findStorage('msg');">
+    </p>
+    <p id="msg"></p>
+    <script src="index.js"></script>
+</body>
+
+</html>

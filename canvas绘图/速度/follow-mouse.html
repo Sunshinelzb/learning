@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标跟随</title>
+</head>
+
+<body>
+    <canvas id="canvas" style="background:#000;" width="500" height="500">
+        you browser not support canvas
+    </canvas>
+    <script src="../Js/arrow.js"></script>
+    <script src="../Js/utils.js"></script>
+    <script>
+    window.onload = function() {
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        //获取鼠标相对canvas的位置
+        var mouse = utils.captureMouse(canvas);
+
+        var arrow = new Arrow();
+        arrow.x = canvas.width / 2;
+        arrow.y = canvas.height / 2;
+
+        var angle = 0,
+            speed = 2; //定义速度和方向
+
+        (function drawFrame() {
+            window.requestAnimationFrame(drawFrame, canvas);
+            context.clearRect(0, 0, canvas.width, canvas.height);
+
+            //这点看不懂的话，就去复习一下吧，我们要用它来计算角度
+            var dx = mouse.x - arrow.x;
+            var dy = mouse.y - arrow.y;
+
+            //得到角度值
+            angle = Math.atan2(dy, dx);
+
+            //箭头旋转
+            arrow.rotation = angle; //angle默认为弧度
+
+            //将速度分解
+            var vx = Math.cos(angle) * speed;
+            var vy = Math.sin(angle) * speed;
+
+            //移动
+            arrow.x += vx;
+            arrow.y += vy;
+            //绘制
+            arrow.draw(context);
+        }());
+    }
+    </script>
+</body>
+
+</html>

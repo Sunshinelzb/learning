@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>黑客帝国</title>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" style="background-color: #000;"></canvas>
+    <script>
+    (function() {
+        var canvas = document.getElementById('canvas'),
+            context = canvas.getContext('2d'),
+            w, h;
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+
+        // 初始化
+        var clearcolor = 'rgba(0,0,0,.1)', //绘制阴影
+            wordColor = "#3f3", //文字颜色
+            words = "0123456789qwertyuiopasdfghjklzxcvbnm,./;'\[]QWERTYUIOP{}ASDFGHJHJKL:ZXCVBBNM<>?",
+            wordsArr = words.split(''),//字符串转数组
+            font_size = 16,
+            columns = w / font_size, //文字降落的列数
+            drops = [];
+
+        for (var i = 0; i < columns; i++) drops[i] = 1;
+
+        function draw() {
+            context.save();
+            context.fillStyle = wordColor;
+            context.font = font_size + "px Arial";
+
+            // 核心技能
+            for (var i = 0, len = drops.length; i < len; i++) {
+                var text = wordsArr[Math.floor(Math.random() * wordsArr.length)]; //获取随机文字
+                // context.fillText('文字','横坐标','纵坐标')
+                
+                context.fillText(text, i * font_size, drops[i] * font_size);
+                //随机返回第一行
+                if (drops[i] * font_size > h && Math.random() > 0.98) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+            context.restore();
+        }
+
+        // 动画循环
+        (function drawFrame() {
+            window.requestAnimationFrame(drawFrame, canvas);
+            context.fillStyle = clearcolor;
+            context.fillRect(0, 0, w, h);
+
+            draw();
+        }())
+
+        // 监听窗口改变
+        function resize() {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = window.innerHeight;
+        }
+        canvas.addEventListener("resize", resize);
+        function add(e){
+            console.log("Mouse pressed on element");
+        }
+        canvas.addEventListener('mousedown',add,false)
+        canvas.removeEventListener('mousedown',add,false);
+    }())
+    </script>
+</

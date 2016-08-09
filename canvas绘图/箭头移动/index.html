@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>箭头移动</title>
+    <style type="text/css">
+    	#canvas {
+    		position: absolute;
+    		left: 50%;
+    		top: 50%;
+    		margin: -250px 0 0 -250px;
+    	}
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="500" height="500" style="background-color: #ccc;">
+        You browser not support canvas.
+    </canvas>
+    <script src="utils.js"></script>
+    <script src="arrow.js"></script>
+    <script>
+    (function() {
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        var centerX = canvas.width / 2;
+        var centerY = canvas.height / 2;
+
+        var mouse = utils.captureMouse(canvas);
+
+        var arrow = new Arrow();
+
+        arrow.x = centerX;
+        arrow.y = centerY;
+
+        (function drawFrame() {
+            window.requestAnimationFrame(drawFrame, canvas);
+            context.clearRect(0, 0, canvas.width, canvas.height);
+
+            var dx = mouse.x - arrow.x,
+                dy = mouse.y - arrow.y;
+
+            arrow.rotation = Math.atan2(dy, dx);
+            arrow.draw(context);
+        }());
+    }())
+    </script>
+</body>
+
+</html>

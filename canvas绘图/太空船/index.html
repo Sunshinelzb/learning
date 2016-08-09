@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>太空船</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="500" height="500" style="background: #000;"></canvas>
+    <script src="../Js/utils.js"></script>
+    <script src="../Js/ship.js"></script>
+    <script>
+    (function() {
+        var canvas = document.getElementById('canvas'),
+            context = canvas.getContext('2d');
+
+        var spaceShip = new SpaceShip();
+        spaceShip.x = canvas.width / 2;
+        spaceShip.y = canvas.height / 2;
+
+        //初始化
+        var vr = 0,
+            vx = 0,
+            vy = 0,
+            ax = 0,
+            ay = 0,
+            angle = 0,
+            thrust = 0;
+
+        //通过方向键控制各变量的值
+        window.addEventListener('keydown', function(event) {
+            switch (event.keyCode) {
+                case 37: //left
+                    vr = -3;
+                    vx = 0;
+                    vy = 0;
+                    break;
+                case 39: //right
+                    vr = 3;
+                    vx = 0;
+                    vy = 0;
+                    break;
+                case 38: //up
+                    spaceShip.showFlame = true;
+                    thrust = 0.05;
+                    break;
+                case 40: //down
+                    ax = 0;
+                    ay = 0;
+                    vx = 0;
+                    vy = 0;
+                    break;
+            }
+        }, false);
+
+        window.addEventListener('keyup', function(event) {
+            vr = 0;
+            thrust = 0;
+            spaceShip.showFlame = false;
+        }, false);
+
+        (function drawFrame() {
+            window.requestAnimationFrame(drawFrame, canvas);
+            context.clearRect(0, 0, canvas.width, canvas.height);
+
+            //角度
+            spaceShip.rotation += vr * Math.PI / 180;
+
+            angle = spaceShip.rotation;
+            ax = Math.cos(angle) * thrust;
+            ay = Math.sin(angle) * thrust;
+
+            vx += ax;
+            vy += ay;
+
+            spaceShip.x += vx;
+            spaceShip.y += vy;
+
+            spaceShip.draw(context);
+
+        }());
+    }())
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>editor</title>
+    <style>
+    html,
+    body,
+    #editor {
+        margin: 0;
+        height: 100%;
+        font-family: Arial;
+        color: #333;
+    }
+
+    textarea,
+    #editor div {
+        display: inline-block;
+        width: 49%;
+        height: 100%;
+        vertical-align: top;
+        box-sizing: border-box;
+        padding: 0 20px;
+    }
+
+    textarea {
+        border: none;
+        border-right: 1px solid #ccc;
+        resize: none;
+        outline: none;
+        background-color: #f6f6f6;
+        font: normal 14px Arial;
+        padding: 20px;
+    }
+
+    code {
+        color: #f66;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="editor">
+        <textarea name="" v-model="input" debounce="300"></textarea>
+        <div v-html="input | marked"></div>
+    </div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <script>
+    var editor = new Vue({
+        el: '#editor',
+        data: {
+            input: '# hello world'
+        },
+        filters: {
+            marked: marked
+        }
+    })
+    </script>
+</body>
+
+</html>
