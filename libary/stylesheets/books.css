@@ -1,0 +1,114 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 6, ../sass/books.scss */
+img {
+  max-width: 100%;
+  width: 540px;
+  height: 304px;
+}
+
+/* line 11, ../sass/books.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* line 20, ../sass/books.scss */
+.img {
+  width: 100%;
+  height: 30rem;
+  background: url(../images/bg1.jpg) no-repeat;
+  background-size: cover;
+}
+
+/* line 26, ../sass/books.scss */
+.contain {
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 5rem;
+  clear: both;
+  overflow: hidden;
+}
+/* line 33, ../sass/books.scss */
+.contain .col-md-4:not(:first-child) {
+  margin-left: 5%;
+}
+/* line 36, ../sass/books.scss */
+.contain .col-md-4 {
+  width: 30%;
+  height: auto;
+  float: left;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* line 38, ../sass/books.scss */
+.contain .col-md-4 h3 {
+  font-size: 2rem;
+  color: #999;
+  margin-bottom: 2.3rem;
+}
+/* line 45, ../sass/books.scss */
+.contain .col-md-4 h4 {
+  width: 100%;
+  padding: 1rem 0;
+  color: #6cbc35;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+}
+/* line 52, ../sass/books.scss */
+.contain .col-md-4 p {
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  color: #a0a0a0;
+  font-size: 1rem;
+  line-height: 1.8rem;
+  margin: 0;
+}
+/* line 60, ../sass/books.scss */
+.contain .col-md-4 a {
+  font-family: 'Open Sans', sans-serif;
+  display: inline-block;
+  width: 5rem;
+  height: 2rem;
+  background: #660066;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.8rem;
+  text-align: center;
+  transform: translateZ(0);
+  transition: all .3s ease-in-out;
+  backface-visibility: hidden;
+}
+/* line 73, ../sass/books.scss */
+.contain .col-md-4 a:hover {
+  background: #6cbc35;
+}
+
+/* line 79, ../sass/books.scss */
+.footer {
+  width: 100%;
+  height: 5rem;
+  overflow: hidden;
+  margin-top: 2rem;
+  line-height: 5rem;
+  background: #8000ff;
+  color: #fff;
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.8rem;
+}
+
+/* line 101, ../sass/books.scss */
+.primary {
+  color: #ff0000;
+  background-color: #00ff00;
+  border-color: #0000ff;
+}
+
+/* line 107, ../sass/books.scss */
+.secondary {
+  color: #00ff00;
+  background-color: #0000ff;
+  border-color: #ff0000;
+}

@@ -1,0 +1,109 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+$font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+img {
+	max-width: 100%;
+	width: 540px;
+	height: 304px;
+}
+a:hover {
+	text-decoration: none;
+}
+@mixin col-md-4 {
+	width: 30%;
+	height: auto;
+	float: left;
+	font-family: $font;
+}
+.img {
+	width: 100%;
+	height: 30rem;
+	background: url(../images/bg1.jpg) no-repeat;
+	background-size: cover;
+}
+.contain {
+	width: 90%;
+	height: auto;
+	margin: 0 auto;
+	margin-top: 5rem;
+	clear: both;
+	overflow: hidden;
+	.col-md-4:not(:first-child) {
+		margin-left: 5%;
+	}
+	.col-md-4 {
+		@include col-md-4;
+		h3 {
+			font: {
+				size: 2rem;
+			}
+			color: #999;
+			margin-bottom: 2.3rem;
+		}
+		h4 {
+			width: 100%;
+			padding: 1rem 0;
+			color: #6cbc35;
+			font-size:1.2rem;
+			line-height: 1.2rem;
+		}
+		p {
+			font-family: 'Open Sans', sans-serif;
+			width: 100%;
+			color:#a0a0a0;
+			font-size:1rem;
+			line-height: 1.8rem;
+			margin: 0;
+		}
+		a {
+			font-family: 'Open Sans', sans-serif;
+			display: inline-block;
+			width: 5rem;
+			height: 2rem;
+			background: #660066;
+			color:#fff;
+			font-size: 1rem;
+			line-height: 1.8rem;
+			text-align: center;
+			transform: translateZ(0);
+			transition: all .3s ease-in-out;
+			backface-visibility: hidden;
+			&:hover {
+				background: #6cbc35;
+			}
+		}
+	}
+}
+.footer {
+	width: 100%;
+	height: 5rem;
+	overflow: hidden;
+	margin-top: 2rem;
+	line-height: 5rem;
+	background:hsl(270,100%,50%);
+	color:#fff;
+	text-align: center;
+	font: {
+		family:$font;
+		size:1.8rem;
+	}
+}
+@mixin colors($text, $background, $border) {
+    color: $text;
+    background-color: $background;
+    border-color: $border;
+}
+
+//list类型变量
+$values: #ff0000, #00ff00, #0000ff;
+.primary {
+    @include colors($values...);
+}
+
+//map类型变量
+$value-map: (text: #00ff00, background: #0000ff, border: #ff0000);
+.secondary {
+    @include colors($value-map...);
+}

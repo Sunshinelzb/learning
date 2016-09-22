@@ -1,0 +1,84 @@
+/* line 3, ../sass/personinfo.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* line 7, ../sass/personinfo.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 30, ../sass/personinfo.scss */
+.img {
+  width: 100%;
+  height: auto;
+  background: url(../images/66.jpg) no-repeat top center;
+}
+
+/* line 35, ../sass/personinfo.scss */
+.info {
+  width: 90%;
+  height: auto;
+  margin: 5rem auto;
+}
+/* line 11, ../sass/personinfo.scss */
+.info .register h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+  letter-spacing: -1px;
+  color: #ccc;
+  margin-bottom: 2.8rem;
+}
+/* line 20, ../sass/personinfo.scss */
+.info .register p {
+  color: #bbb;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 200%;
+  margin-bottom: 2rem;
+}
+/* line 11, ../sass/personinfo.scss */
+.info .login h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+  letter-spacing: -1px;
+  color: #ccc;
+  margin-bottom: 2.8rem;
+}
+/* line 20, ../sass/personinfo.scss */
+.info .login p {
+  color: #bbb;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 200%;
+  margin-bottom: 2rem;
+}
+
+/* line 47, ../sass/personinfo.scss */
+.footer {
+  width: 100%;
+  height: 5rem;
+  overflow: hidden;
+  line-height: 5rem;
+  background: #8000ff;
+  color: #fff;
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.8rem;
+}
+@media screen and (min-width: 1280px) {
+  /* line 47, ../sass/personinfo.scss */
+  .footer {
+    width: 100%;
+    height: 5rem;
+    overflow: hidden;
+    line-height: 5rem;
+    background: #8000ff;
+    color: #fff;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.8rem;
+    position: absolute;
+    bottom: 0;
+  }
+}

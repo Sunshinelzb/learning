@@ -1,0 +1,162 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 7, ../sass/addbooks.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* line 11, ../sass/addbooks.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 14, ../sass/addbooks.scss */
+#app {
+  margin: 0 auto;
+  max-width: 90%;
+}
+/* line 17, ../sass/addbooks.scss */
+#app input[type=text] {
+  border: 1px solid #42b983;
+  width: 15rem;
+  padding: .5rem .3rem;
+  margin-top: 1rem;
+}
+/* line 22, ../sass/addbooks.scss */
+#app input[type=text]:focus {
+  border-color: #001aff;
+  box-shadow: 1px 1px 1px #001aff;
+}
+
+/* line 28, ../sass/addbooks.scss */
+table,
+td,
+th {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 34, ../sass/addbooks.scss */
+table {
+  width: 90%;
+  margin: 0 auto;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* line 41, ../sass/addbooks.scss */
+td, th {
+  border: 1px solid #bcbcbc;
+  padding: .5rem 1rem;
+  text-align: center;
+}
+
+/* line 46, ../sass/addbooks.scss */
+th {
+  background: #42b983;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* line 53, ../sass/addbooks.scss */
+tr {
+  font-size: 1.2rem;
+}
+
+/* line 56, ../sass/addbooks.scss */
+tr:nth-of-type(odd) {
+  background: #fff;
+}
+
+/* line 60, ../sass/addbooks.scss */
+tr:nth-of-type(even) {
+  background: #eee;
+}
+
+/* line 64, ../sass/addbooks.scss */
+fieldset {
+  border: 3px solid #BCBCBC;
+  border-bottom: none;
+  padding: 15px;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 4rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.2rem;
+}
+
+/* line 77, ../sass/addbooks.scss */
+input {
+  outline: none;
+}
+
+/* line 80, ../sass/addbooks.scss */
+button {
+  outline: none;
+  padding: 5px 8px;
+  color: #fff;
+  border: 1px solid #BCBCBC;
+  border-radius: 3px;
+  background-color: #009A61;
+  cursor: pointer;
+}
+/* line 88, ../sass/addbooks.scss */
+button:hover {
+  opacity: .8;
+}
+
+/* line 93, ../sass/addbooks.scss */
+.form-group {
+  margin: 1rem;
+}
+/* line 95, ../sass/addbooks.scss */
+.form-group label {
+  display: inline-block;
+  width: 10rem;
+  text-align: right;
+}
+/* line 100, ../sass/addbooks.scss */
+.form-group input, .form-group select {
+  display: inline-block;
+  height: 2.5rem;
+  line-height: 2.5rem;
+}
+
+/* line 106, ../sass/addbooks.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 110, ../sass/addbooks.scss */
+.footer {
+  width: 100%;
+  height: 5rem;
+  overflow: hidden;
+  margin-top: 4rem;
+  line-height: 5rem;
+  background: #8000ff;
+  color: #fff;
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.8rem;
+}
+@media screen and (min-width: 1380px) {
+  /* line 110, ../sass/addbooks.scss */
+  .footer {
+    width: 100%;
+    height: 5rem;
+    overflow: hidden;
+    margin-top: 4rem;
+    line-height: 5rem;
+    background: #8000ff;
+    color: #fff;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.8rem;
+    position: absolute;
+    bottom: 0;
+  }
+}

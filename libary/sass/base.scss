@@ -1,0 +1,65 @@
+@import "compass/reset","compass/css3","compass/support";
+@import "compass/typography/links";
+@import "compass/typography/lists";
+@import "compass/typography/text";
+/*! 页面共用导航部分 */
+$font: arial, sans-serif,Verdana, Helvetica;
+ul li{
+	list-style: none;
+}
+a:hover {
+	text-decoration: none;
+}
+.header {
+	width: 100%;
+	height: 5rem;
+	background: #bcbcbc;
+	// h1 {
+	// 	width:25%;
+	// 	height: 100%;
+	// 	margin-left: 20%;
+	// 	line-height: 5rem;
+	// 	color: #fff;
+	// 	float: left;
+	// 	font: {
+	// 		family: $font;
+	// 		size: 1.5rem;
+	// 	}
+	// }
+	button {
+		width: 5%;
+		height: 2.5rem;
+		float: left;
+		font: {
+			family: $font;
+		}
+		margin-top: 1.4rem;
+	}
+	nav {
+		width: 55%;
+		height: 100%;
+		float: left;
+		margin-left: 10%;
+		ul li{
+			float: left;
+			display: block;
+			line-height: 5rem;
+			margin-right: 4rem;
+			font: {
+				family: $font;
+				size: 1.2rem;
+			}
+			&:hover a {
+				border-bottom: 0.15rem solid #fff;
+			}
+		}
+		ul li:last-of-type {
+			margin-right: 0;
+		}
+		a {
+			padding-bottom: 0.5rem;
+			color:#fff;
+		}
+	}
+}
+/* 页面共用导航部分结束 */
