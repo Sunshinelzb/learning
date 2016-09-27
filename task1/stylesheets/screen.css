@@ -1,0 +1,165 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 7, ../sass/screen.scss */
+html, body {
+  height: 100%;
+  background-color: #eee;
+}
+
+/* line 11, ../sass/screen.scss */
+body {
+  position: relative;
+}
+
+/* line 14, ../sass/screen.scss */
+img {
+  max-width: 100%;
+  width: 100%;
+}
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url("../fonts/glyphicons-halflings-regular.eot");
+  src: url("../fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
+}
+/* line 24, ../sass/screen.scss */
+.head- {
+  width: 100%;
+  height: 3.5em;
+  margin: 0;
+  padding: 0;
+  background-color: #4eb630;
+}
+/* line 30, ../sass/screen.scss */
+.head- h1 {
+  width: 100%;
+  height: 100%;
+  font: 1.5em/1.5em "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif !important;
+  color: #fff;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+/* line 39, ../sass/screen.scss */
+.icon {
+  margin-top: 5%;
+  background-color: #eee;
+}
+/* line 42, ../sass/screen.scss */
+.icon p {
+  font: 0.8em/0.8em "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+  color: #000;
+  margin-top: 0.8em;
+}
+
+/* line 48, ../sass/screen.scss */
+.show {
+  margin-top: 5%;
+}
+/* line 50, ../sass/screen.scss */
+.show span {
+  font: 0.8em/0.8em "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+  color: #000;
+}
+
+/* line 55, ../sass/screen.scss */
+.bottom {
+  margin-bottom: 20%;
+}
+
+/* line 58, ../sass/screen.scss */
+.bg {
+  background: #ddd !important;
+}
+
+/* line 61, ../sass/screen.scss */
+.box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  background: #ddd;
+  padding: 0.5em 0;
+}
+/* line 69, ../sass/screen.scss */
+.box .font {
+  font-size: 1.5em;
+}
+/* line 72, ../sass/screen.scss */
+.box .item {
+  width: 20%;
+}
+/* line 75, ../sass/screen.scss */
+.box p {
+  font: 0.8em/0.8em "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+  color: #000;
+  margin-top: 0.8em;
+}

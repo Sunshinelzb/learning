@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>商品展示</title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/screen.css">
+</head>
+
+<body>
+    <!-- 容器 -->
+    <div class="container">
+        <!-- 头部 -->
+        <div class="row text-center vertical-middle-md">
+            <header class="page-header head-">
+                <h1>O2O电商农产品</h1>
+            </header>
+        </div>
+        <!-- 图片轮播 -->
+        <div id="myCarousel" class="carousel slide">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- 轮播（Carousel）项目 -->
+            <div class="row">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="images/lufei.jpg" class="img-responsive" alt="First slide">
+                    </div>
+                    <div class="item">
+                        <img src="images/lufei1.jpg" alt="Second slide" class="img-responsive">
+                    </div>
+                    <div class="item">
+                        <img src="images/nazi.jpg" alt="Third slide" class="img-responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 图标分页 -->
+        <div class="row text-center icon">
+            <div class="col-xs-3">
+                <a href="javascript:;" class="btn btn-info btn-lg">
+                    <span class="glyphicon glyphicon-star"></span>
+                </a>
+                <p>我的礼包</p>
+            </div>
+            <div class="col-xs-3">
+                <a href="javascript:;" class="btn btn-info btn-lg">
+                    <span class="glyphicon glyphicon-tags"></span>
+                </a>
+                <p>会员充值</p>
+            </div>
+            <div class="col-xs-3">
+                <a href="javascript:;" class="btn btn-info btn-lg">
+                    <span class="glyphicon glyphicon-briefcase"></span>
+                </a>
+                <p>天天促销</p>
+            </div>
+            <div class="col-xs-3">
+                <a href="javascript:;" class="btn btn-info btn-lg">
+                    <span class="glyphicon glyphicon-home"></span>
+                </a>
+                <p>有机生活</p>
+            </div>
+        </div>
+        <!-- 商品展示 -->
+        <div class="row text-center show">
+            <div class="col-xs-6">
+                <a href="javascript:;">
+                    <img src="images/1.jpg" class="img-responsive" alt="">
+                </a>
+                <span>美女</span>
+            </div>
+            <div class="col-xs-6">
+                <a href="javascript:;">
+                    <img src="images/2.jpg" class="img-responsive" alt="">
+                </a>
+                <span>美女</span>
+            </div>
+        </div>
+        <div class="row text-center show">
+            <div class="col-xs-6">
+                <a href="javascript:;">
+                    <img src="images/3.jpg" class="img-responsive" alt="">
+                </a>
+                <span>美女</span>
+            </div>
+            <div class="col-xs-6">
+                <a href="javascript:;">
+                    <img src="images/4.png" class="img-responsive" alt="">
+                </a>
+                <span>美女</span>
+            </div>
+        </div>
+        <div class="row text-center show bottom">
+            <div class="col-xs-6">
+                <a href="javascript:;">
+                    <img src="images/2.jpg" class="img-responsive" alt="">
+                </a>
+                <span>美女</span>
+            </div>
+            <div class="col-xs-6">
+                <a href="javascript:;">
+                    <img src="images/3.jpg" class="img-responsive" alt="">
+                </a>
+                <span>美女</span>
+            </div>
+        </div>
+        <!-- 底部导航 -->
+        <nav class="navbar navbar-default navbar-fixed-bottom bg" role="navigation">
+            <div class="container">
+                <div class="row">
+                	<div class="box text-center">
+                    <div class="item">
+                        <a href="javascript:;">
+                            <span class="glyphicon glyphicon-home font"></span>
+                            <!-- <span></span> -->
+                            <!-- <p>首页</p> -->
+                        </a>
+                        <p>首页</p>
+                    </div>
+                    <div class="item">
+                        <a href="javascript:;">
+                            <span class="glyphicon glyphicon-th-list font"></span>
+                            <!-- <span></span> -->
+                            <!-- <p>分类</p> -->
+                        </a>
+                        <p>分类</p>
+                    </div>
+                    <div class="item">
+                        <a href="javascript:;">
+                            <span class="glyphicon glyphicon-user font"></span>
+                        </a>
+                        <!-- <span></span> -->
+                        <p>我的鲜生</p>
+                    </div>
+                    <div class="item">
+                        <a href="javascript:;">
+                            <span class="glyphicon glyphicon-shopping-cart font"></span>
+                        </a>
+                        <!-- <span></span> -->
+                        <p>购物车</p>
+                    </div>
+                    <div class="item">
+                        <a href="javascript:;">
+                            <span class="glyphicon glyphicon-envelope font"></span>
+                        </a>
+                        <!-- <span></span> -->
+                        <p>有机生活</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    $("#myCarousel").carousel('cycle');
+    </script>
+</body>
+
+</html>
