@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FlipCards</title>
+    <style>
+    	* {
+    		margin: 0;
+    		padding: 0;
+    	}
+    	ul,li {
+    		list-style: none;
+    	}
+    	#content {
+    		width: 225px;
+    		height: 180px;
+    		position: absolute;
+    		top: 50%;
+    		left: 50%;
+    		margin-left: -113px;
+    		margin-top: -90px;
+    	}
+    	#content ul li {
+    		width: 225px;
+    		height: 180px;
+    	}
+    	#content ul li a {
+    		position: relative;
+    		display: block;
+    		width: 100%;
+    		height: 100%;
+    		-webkit-perspective: 1000px;
+    		-moz-perspective: 1000px;
+    		-ms-perspective: 1000px;
+    		perspective: 1000px;
+    	}
+    	#content ul li a > div {
+    		position: absolute;
+    		left: 0;
+    		top: 0;
+    		width: 100%;
+    		height: 100%;
+    		color: #fff;
+    	}
+    	#content ul li a div:first-child {
+    		background-color: rgb(255,64,129);
+    		z-index: 2;
+    	}
+    	#content ul li a div:last-child {
+    		background-color: rgb(0,188,212);
+    		z-index: 1;
+    	}
+    	#content ul li a div h3 {
+    		margin: 0 auto 15px;
+    		padding: 15px 0;
+    		width: 200px;
+    		height: 16px;
+    		font: 14px/16px sans-serif;
+    		text-align: center;
+    		border-bottom: 1px #fff dashed;
+    	}
+    	#content ul li a div p {
+    		padding: 0 10px;
+    		font-size: 12px;
+    		text-indent: 2em;
+    		line-height: 18px;
+    	}
+    	#content ul li a > div {
+    		-webkit-transition: .8s ease-in-out;
+    		transition: .8s ease-in-out;
+    	}
+    	#content ul li a  div:first-child {
+    		-webkit-transform: rotateY(0);
+    		-ms-transform: rotateY(0);
+    		-o-transform: rotateY(0);
+    		transform: rotateY(0);
+    	}
+    	#content ul li a div:last-child {
+    		-webkit-transform: rotateY(180deg);
+    		-ms-transform: rotateY(180deg);
+    		-o-transform: rotateY(180deg);
+    		transform: rotateY(180deg);
+    	}
+    	#content ul li a:hover div:first-child{
+    		-webkit-transform: rotateY(-180deg);
+    		-ms-transform: rotateY(-180deg);
+    		-o-transform: rotateY(-180deg);
+    		transform: rotateY(-180deg);
+    	}
+    	#content ul li a:hover div:last-child {
+    		-webkit-transform: rotateY(0);
+    		-ms-transform: rotateY(0);
+    		-o-transform: rotateY(0);
+    		transform: rotateY(0);
+    	}
+    	#content ul li a > div {
+    		-webkit-backface-visibility: hidden;
+    		-moz-backface-visibility: hidden;
+    		-ms-backface-visibility: hidden;
+    		backface-visibility: hidden;
+    	}
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <ul>
+            <li>
+                <a href="javascript:void(0);">
+                    <div>
+                        <h3>测试正面1</h3>
+                        <p>文字文字文字文字文字文字文字文字文字文字文字</p>
+                    </div>
+                    <div>
+                        <h3>测试背面1</h3>
+                        <p>文字文字文字文字文字文字文字文字文字文字文字</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

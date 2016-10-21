@@ -1,0 +1,47 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+#state {
+	width: 900px;
+	height: 500px;
+	min-height: 100px;
+	margin: 0 auto;
+	background: #f0f0f0;
+	perspective:800px;
+	padding: 100px 50px;
+	transition: top .5s;
+	position: relative;
+	box-shadow: inset 0 0 3px rgba(0,0,0,.35);
+	#container {
+		position: absolute;
+		transform-style: preserve-3d;
+		left: 50%;
+		width: 128px;
+		height: 100px;
+		transition:transform 1s;
+		margin-left: -64px;
+		margin-top: 100px;
+		animation: photoRotate 20s linear infinite;
+		backface-visibility:hidden;
+		.piece {
+			width: 128px;
+			position: absolute;
+			bottom: 0;
+			box-shadow: 0 1px 3px rgba(0,0,0,.5);
+			transition: opacity 1s, transform 1s;
+		}
+	}
+}
+@keyframes photoRotate {
+  0% {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}

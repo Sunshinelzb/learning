@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, width=device-width" />
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div id="welcome" class="SHADE BOX-M">
+        <div id="game-logo"></div>
+        <div class="FILL BOX-M" style="position:absolute;left:0;right:0;bottom:8em;z-index:5;">
+            <div id="ready-btn" style="display:inline-block;margin:0 auto;width:8em;height:2.5em;font-size:2.2em;"></div>
+        </div>
+    </div>
+    <div id="rule">
+        <div id="rule_bg">
+            <div id="rule_content">
+            </div>
+            <div id="rule_btn">
+            </div>
+        </div>
+    </div>
+    <div id="landscape" class="SHADE BOX-M" style="background:rgba(0,0,0,.9);">
+        <div class="welcome-bg FILL"></div>
+        <div id="landscape-text" style="color:#fff;font-size:3em;">请竖屏玩耍</div>
+    </div>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://file.tuyoumi.com/ext/tuyoumi-sdk/sdk.js"></script>
+    <script src="http://cdn.tuyoumi.com/tuyoumi-master/proto/05d341f0-73fd-11e6-91cd-893dae207928/game.js?g_5_0"></script>
+    <script>
+    window.cdnRoot = (window.userConfig && window.userConfig.engine_js_path) ? window.userConfig.engine_js_path.split('g
+    	ame.js')[0] : '../';
+    tymsdk.loadConfig(function(cfg) {
+        window.userConfig = cfg
+        initGame();
+        gameReady();
+    });
+    </script>
+</body>
+
+</html>

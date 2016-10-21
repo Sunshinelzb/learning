@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>双实心箭头</title>
+    <style>
+    .rds-arrow-wrapper {
+        position: relative;
+        width: 20em;
+        text-align: center;
+        background: red;
+    }
+
+    .rds-arrow,
+    .rds-arrow:after {
+        display: inline-block;
+        position: relative;
+        width: 0;
+        height: 0;
+        border-top: 1rem solid transparent;
+        border-left: 2rem solid lightblue;
+        border-bottom: 1rem solid transparent;
+        border-right: 2rem solid transparent;
+    }
+
+    .rds-arrow {
+        margin-left: 1rem;
+    }
+
+    .rds-arrow:after {
+        content: "";
+        position: absolute;
+        left: 100%;
+        top: -1rem;
+        bottom: 0;
+    }
+    </style>
+</head>
+	<div class="rds-arrow-wrapper">
+		<div class="rds-arrow"></div>
+	</div>
+<body>
+</body>
+
+</html>

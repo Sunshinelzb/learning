@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>3D旋转</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #state {
+        width: 100%;
+        height: 600px;
+        background: #ccc;
+        perspective: 800px;
+        transition: top .5s;
+        position: relative;
+    }
+
+    #container {
+        position: absolute;
+        width: 300px;
+        height: 150px;
+        left: 50%;
+        top: 50%;
+        margin: -75px 0 0 -150px;
+        cursor: pointer;
+        transform-style: preserve-3d;
+        transition: transform 1s;
+        animation: photoRotate 18s ease-in-out infinite;
+        will-change: transform;
+    }
+
+    .example {
+        width: 300px;
+        height: 150px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+        transition: opacity 1s, transform 1s;
+        position: absolute;
+        bottom: 0;
+    }
+
+    @keyframes photoRotate {
+        0% {
+            -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+        }
+        16.7% {
+            -webkit-transform: rotateY(60deg);
+            transform: rotateY(60deg);
+        }
+        33.3% {
+            -webkit-transform: rotateY(120deg);
+            transform: rotateY(120deg);
+        }
+        50% {
+            -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+        66.7% {
+            -webkit-transform: rotateY(240deg);
+            transform: rotateY(240deg);
+        }
+        83.3% {
+            -webkit-transform: rotateY(300deg);
+            transform: rotateY(300deg);
+        }
+        100% {
+            -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+        }
+    }
+    img {
+    	max-width: 100%;
+    	width: 300px;
+    	height: 150px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="state">
+        <div id="container">
+            <div class="example" style="transform:rotateY(0deg) translateZ(320px); background-color:rgba(153,204,204,.8);">
+            	<img src="https://ooo.0o0.ooo/2016/09/11/57d55125536b6.jpg" alt="">
+            </div>
+            <div class="example" style="transform:rotateY(60deg) translateZ(320px); background-color:rgba(153,204,204,.8);">
+            	<img src="https://ooo.0o0.ooo/2016/09/11/57d565d425eda.jpg" alt="">
+            </div>
+            <div class="example" style="transform:rotateY(120deg) translateZ(320px); background-color:rgba(153,204,204,.8);">
+            	<img src="https://ooo.0o0.ooo/2016/09/11/57d565d430d92.jpg" alt="">
+            </div>
+            <div class="example" style="transform:rotateY(180deg) translateZ(320px); background-color:rgba(153,204,204,.8);">
+            	<img src="https://ooo.0o0.ooo/2016/09/11/57d55125536b6.jpg" alt="">
+            </div>
+            <div class="example" style="transform:rotateY(240deg) translateZ(320px); background-color:rgba(153,204,204,.8);">
+            	<img src="https://ooo.0o0.ooo/2016/09/11/57d565d430d92.jpg" alt="">
+            </div>
+            <div class="example" style="transform:rotateY(300deg) translateZ(320px); background-color:rgba(153,204,204,.8);">
+            	<img src="https://ooo.0o0.ooo/2016/09/11/57d565d425eda.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

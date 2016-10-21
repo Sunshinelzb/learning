@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>实现丝带</title>
+    <style>
+     * {
+        font-family: simhei, sans-serif;
+        box-sizing: border-box;
+    }
+
+    html {
+        font-size: 62.5%;
+    }
+
+    body {
+        background-color: lightblue;
+    }
+
+    div {
+        margin: 20px auto;
+    }
+    .ribbon {
+        position: relative;
+        width: 10rem;
+        height: 3rem;
+        padding: 0.7rem 0;
+        font-size: 1.6rem !important;
+        color: #fff;
+        text-align: center;
+        background: #ff0066;
+        margin-left: 100px;
+    }
+
+    .ribbon:before,
+    .ribbon:after {
+        content: "";
+        position: absolute;
+        display: block;
+        bottom: -0.6rem;
+        border: 1.5rem solid #ff0066;
+        z-index: -1;
+    }
+
+    .ribbon:before {
+        left: -2.4rem;
+        border-right-width: 1.5rem;
+        border-left-color: transparent;
+        box-shadow: 1px 1px 0 rgba(176, 102, 166, 0.8);
+    }
+
+    .ribbon:after {
+        right: -2.4rem;
+        border-left-width: 1.5rem;
+        border-right-color: transparent;
+        box-shadow: 0 1px 0 rgba(176, 102, 166, 0.8);
+    }
+
+    .ribbon .ribbon-content:before,
+    .ribbon .ribbon-content:after {
+        content: "";
+        position: absolute;
+        display: block;
+        border-style: solid;
+        border-color: #bf004c transparent transparent transparent;
+        bottom: -0.6rem;
+    }
+
+    .ribbon .ribbon-content:before {
+        left: 0;
+        border-width: 0.6rem 0 0 0.6rem;
+    }
+
+    .ribbon .ribbon-content:after {
+        right: 0;
+        border-width: 0.6rem 0.6rem 0 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="ribbon">
+        <span class="ribbon-content">金卡会员</span>
+    </div>
+</body>
+
+</html>
